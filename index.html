@@ -1,380 +1,352 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>GTA Modding Community</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA Modding Community</title>
+    <!-- Font Awesome Icons ke liye CDN -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-<style>
+        .container {
+            width: 100%;
+            max-width: 550px;
+            background-color: #0b0b0c;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+        /* Profile Section */
+        .logo-container {
+            margin-bottom: 15px;
+        }
 
-body{
-    background:#050505;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
-}
+        .logo-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 2px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        }
 
-.container{
-    width:100%;
-    max-width:500px;
-    background:#090909;
-    border-radius:30px;
-    border:2px solid #1d1d1d;
-    padding:30px 20px;
-    text-align:center;
-    box-shadow:0 0 30px rgba(255,0,0,0.15);
-}
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
 
-.logo{
-    width:150px;
-    height:150px;
-    margin:auto;
-    border-radius:50%;
-    border:5px solid red;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#111;
-    box-shadow:0 0 25px red;
-    overflow:hidden;
-}
+        .sub-tags {
+            font-size: 13px;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
 
-.logo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+        .description {
+            font-size: 14px;
+            color: #b3b3b3;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
 
-h1{
-    margin-top:25px;
-    font-size:38px;
-    font-weight:700;
-}
+        .highlight-bar {
+            background-color: #121214;
+            border: 1px solid #222;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #f1f1f1;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
 
-.tag{
-    display:inline-block;
-    margin-top:15px;
-    background:linear-gradient(to right,#3d0000,#7a0000);
-    padding:10px 20px;
-    border-radius:50px;
-    font-weight:500;
-    font-size:15px;
-}
+        /* Links Buttons Grid */
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
-.desc{
-    margin-top:22px;
-    color:#cfcfcf;
-    line-height:1.7;
-    font-size:16px;
-}
+        .link-card {
+            display: flex;
+            align-items: center;
+            background-color: #16161a;
+            border: 1px solid #2a2a30;
+            border-radius: 12px;
+            padding: 14px 18px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s, background-color 0.2s;
+            position: relative;
+            cursor: pointer;
+            text-align: left;
+        }
 
-.notice{
-    margin-top:25px;
-    border:1px solid #2b2b2b;
-    padding:16px;
-    border-radius:20px;
-    background:#101010;
-    font-weight:600;
-    font-size:16px;
-}
+        .link-card:hover {
+            transform: translateY(-2px);
+            background-color: #1f1f24;
+        }
 
-.links{
-    margin-top:30px;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
+        /* Custom Left Borders for Each Card */
+        .card-crypto { border-left: 4px solid #00b074; }
+        .card-binance { border-left: 4px solid #f3ba2f; }
+        .card-local-pay { border-left: 4px solid #22c55e; }
+        .card-ads { border-left: 4px solid #6366f1; }
+        .card-download { border-left: 4px solid #ef4444; }
+        .card-contact { border-left: 4px solid #3b82f6; }
 
-.card{
-    text-decoration:none;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px;
-    border-radius:22px;
-    background:#0d0d0d;
-    border:2px solid #222;
-    transition:0.3s;
-}
+        /* Left Icon Style */
+        .icon-circle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
 
-.card:hover{
-    transform:translateY(-4px);
-}
+        /* Icon Colors */
+        .bg-crypto { background-color: #00b074; }
+        .bg-binance { background-color: #f3ba2f; color: #000; }
+        .bg-local-pay { background-color: #22c55e; }
+        .bg-ads { background-color: #6366f1; }
+        .bg-download { background-color: #ef4444; }
+        .bg-contact { background-color: #3b82f6; }
 
-.left{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    text-align:left;
-}
+        .card-content {
+            flex-grow: 1;
+        }
 
-.icon{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    font-weight:bold;
-}
+        .card-title-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-.green{
-    border-color:#00ff99;
-}
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+        }
 
-.yellow{
-    border-color:#ffcc00;
-}
+        .card-subtitle {
+            font-size: 12px;
+            color: #8a8a93;
+            margin-top: 3px;
+        }
 
-.purple{
-    border-color:#a020ff;
-}
+        /* Badges */
+        .badge-top {
+            background-color: #1e3a2f;
+            color: #10b981;
+            font-size: 9px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
 
-.red{
-    border-color:#ff2d2d;
-}
+        .arrow-right {
+            color: #666;
+            font-size: 14px;
+        }
 
-.blue{
-    border-color:#1677ff;
-}
+        /* Footer Section */
+        .footer-text {
+            font-size: 13px;
+            color: #a1a1aa;
+            margin-bottom: 20px;
+        }
 
-.green .icon{
-    background:#00c96b;
-}
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
 
-.yellow .icon{
-    background:#d8a700;
-}
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            background-color: #16161a;
+            border: 1px solid #2a2a30;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
 
-.purple .icon{
-    background:#7b1fff;
-}
+        .social-btn:hover {
+            background-color: #2a2a30;
+        }
 
-.red .icon{
-    background:#ff2d2d;
-}
-
-.blue .icon{
-    background:#1677ff;
-}
-
-.title{
-    font-size:22px;
-    font-weight:600;
-}
-
-.subtitle{
-    font-size:14px;
-    color:#bcbcbc;
-    margin-top:4px;
-}
-
-.arrow{
-    font-size:32px;
-    color:#bdbdbd;
-}
-
-.footer{
-    margin-top:35px;
-    color:#d6d6d6;
-    font-size:16px;
-}
-
-.socials{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    margin-top:25px;
-}
-
-.socials a{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#111;
-    border:1px solid #2b2b2b;
-    color:white;
-    text-decoration:none;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-    transition:0.3s;
-}
-
-.socials a:hover{
-    transform:scale(1.1);
-}
-
-.powered{
-    margin-top:25px;
-    color:#999;
-    font-size:15px;
-}
-
-.powered span{
-    color:#ff3c3c;
-}
-
-@media(max-width:600px){
-
-    h1{
-        font-size:30px;
-    }
-
-    .title{
-        font-size:18px;
-    }
-
-    .subtitle{
-        font-size:13px;
-    }
-
-}
-
-</style>
+        .beacons-brand {
+            font-size: 11px;
+            color: #71717a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        
+        <!-- Profile Header -->
+        <div class="logo-container">
+            
+            <img class="logo-img" src="https://placehold.co" alt="GTA Modding Community">
+        </div>
+        
+        <h1>GTA Modding Community</h1>
+        <div class="sub-tags">Mods • Tools • Tutorials • Community</div>
+        
+        <div class="description">
+            We create and share high quality GTA Mods & tools for free.<br>
+            Your support keeps this community alive! ❤️
+        </div>
+        
+        <div class="highlight-bar">
+            ⭐ Most users support via Binance (Fast & Easy) ⚡
+        </div>
 
-    <div class="logo">
-        <!-- Replace logo.png with your logo -->
-        <img src="logo.png" alt="">
-    </div>
-
-    <h1>GTA Modding Community</h1>
-
-    <div class="tag">
-        Mods • Tools • Tutorials • Community
-    </div>
-
-    <p class="desc">
-        We create and share high quality GTA Mods & tools for free.
-        Your support keeps this community alive! ❤️
-    </p>
-
-    <div class="notice">
-        ⭐ Most users support via Binance (Fast & Easy) ⚡
-    </div>
-
-    <div class="links">
-
-        <a href="#" class="card green">
-            <div class="left">
-                <div class="icon">₮</div>
-
-                <div>
-                    <div class="title">Support via Crypto (TRC20)</div>
-                    <div class="subtitle">USDT TRC20 Accepted</div>
+        <!-- Links Container -->
+        <div class="links-wrapper">
+            
+            <!-- Support via Crypto -->
+            <a href="#" class="link-card card-crypto">
+                <div class="icon-circle bg-crypto">
+                    <i class="fa-solid fa-dollar-sign"></i>
                 </div>
-            </div>
+                <div class="card-content">
+                    <div class="card-title-row">
+                        <span class="card-title">Support via Crypto (TRC20)</span>
+                        <span class="badge-top">Top</span>
+                    </div>
+                    <div class="card-subtitle">USDT TRC20 Accepted</div>
+                </div>
+                <div class="arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
 
-            <div class="arrow">›</div>
+            <!-- Donate via Binance -->
+            <a href="#" class="link-card card-binance">
+                <div class="icon-circle bg-binance">
+                    <i class="fa-solid fa-gavel"></i>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-row">
+                        <span class="card-title">Donate via Binance Pay ⚡</span>
+                    </div>
+                    <div class="card-subtitle">Instant • Secure • Low Fees</div>
+                </div>
+                <div class="arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- JazzCash / Easypaisa -->
+            <a href="#" class="link-card card-local-pay">
+                <div class="icon-circle bg-local-pay">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-row">
+                        <span class="card-title">JazzCash / Easypaisa Support 🇵🇰</span>
+                    </div>
+                    <div class="card-subtitle">Send payment & share screenshot on WhatsApp</div>
+                </div>
+                <div class="arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Free Support (Watch Ads) -->
+            <a href="#" class="link-card card-ads">
+                <div class="icon-circle bg-ads">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-row">
+                        <span class="card-title">Free Support (Watch Ads) 🎉</span>
+                    </div>
+                    <div class="card-subtitle">Support for free by viewing ads</div>
+                </div>
+                <div class="arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Download My Mods -->
+            <a href="#" class="link-card card-download">
+                <div class="icon-circle bg-download">
+                    <i class="fa-solid fa-download"></i>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-row">
+                        <span class="card-title">Download My Mods ⏬</span>
+                    </div>
+                    <div class="card-subtitle">Direct links to all mods & tools</div>
+                </div>
+                <div class="arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+            <!-- Contact Me -->
+            <a href="#" class="link-card card-contact">
+                <div class="icon-circle bg-contact">
+                    <i class="fa-solid fa-comment-dots"></i>
+                </div>
+                <div class="card-content">
+                    <div class="card-title-row">
+                        <span class="card-title">Contact Me 💬</span>
+                    </div>
+                    <div class="card-subtitle">Have questions? Let's talk!</div>
+                </div>
+                <div class="arrow-right"><i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer-text">Thanks for being part of this community! 🙏</div>
+        
+        <div class="social-icons">
+            <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+
+        <a href="https://beacons.ai" class="beacons-brand">
+            <span style="color: #ff4b4b;">🍁</span> Powered by Beacons
         </a>
 
-        <a href="#" class="card yellow">
-            <div class="left">
-                <div class="icon">◈</div>
-
-                <div>
-                    <div class="title">Donate via Binance Pay ⚡</div>
-                    <div class="subtitle">Instant • Secure • Low Fees</div>
-                </div>
-            </div>
-
-            <div class="arrow">›</div>
-        </a>
-
-        <a href="#" class="card green">
-            <div class="left">
-                <div class="icon">₨</div>
-
-                <div>
-                    <div class="title">JazzCash / Easypaisa Support 🇵🇰</div>
-                    <div class="subtitle">Send payment & share screenshot</div>
-                </div>
-            </div>
-
-            <div class="arrow">›</div>
-        </a>
-
-        <a href="#" class="card purple">
-            <div class="left">
-                <div class="icon">👁</div>
-
-                <div>
-                    <div class="title">Free Support (Watch Ads) 🎉</div>
-                    <div class="subtitle">Support for free by viewing ads</div>
-                </div>
-            </div>
-
-            <div class="arrow">›</div>
-        </a>
-
-        <a href="#" class="card red">
-            <div class="left">
-                <div class="icon">⬇</div>
-
-                <div>
-                    <div class="title">Download My Mods 📥</div>
-                    <div class="subtitle">Direct links to all mods & tools</div>
-                </div>
-            </div>
-
-            <div class="arrow">›</div>
-        </a>
-
-        <a href="#" class="card blue">
-            <div class="left">
-                <div class="icon">💬</div>
-
-                <div>
-                    <div class="title">Contact Me 💭</div>
-                    <div class="subtitle">Have questions? Let's talk!</div>
-                </div>
-            </div>
-
-            <div class="arrow">›</div>
-        </a>
-
     </div>
-
-    <div class="footer">
-        Thanks for being part of this community! 🙏
-    </div>
-
-    <div class="socials">
-
-        <a href="#">▶</a>
-        <a href="#">✈</a>
-        <a href="#">◎</a>
-        <a href="#">✉</a>
-
-    </div>
-
-    <div class="powered">
-        Powered by <span>Beacons</span>
-    </div>
-
-</div>
 
 </body>
 </html>
