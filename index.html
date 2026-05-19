@@ -1,384 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA Modding Community</title>
-    <!-- Icons ke liye Font Awesome v6 (Solid + Brands) -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA Modding Community</title>
 
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 40px 16px;
-        }
+<style>
 
-        .main-container {
-            width: 100%;
-            max-width: 540px;
-            text-align: center;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
 
-        /* 1. Profile Logo */
-        .profile-section {
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: center;
-        }
+body{
+    background:#000;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100vh;
+    padding:40px 16px;
+}
 
-        .logo-circle {
-            width: 125px;
-            height: 125px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #ff0000 0%, #000000 80%);
-            border: 2px solid #ff0000;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            padding: 10px;
-        }
+.main-container{
+    width:100%;
+    max-width:540px;
+    text-align:center;
+}
 
-        .logo-text-top {
-            font-size: 19px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            line-height: 1;
-        }
+/* LOGO */
 
-        .logo-text-mid {
-            font-size: 11px;
-            font-weight: 800;
-            background-color: #ff0000;
-            padding: 2px 6px;
-            margin: 3px 0;
-            letter-spacing: 0.5px;
-        }
+.profile-section{
+    margin-bottom:25px;
+    display:flex;
+    justify-content:center;
+}
 
-        .logo-text-bot {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #e2e8f0;
-        }
+.logo-circle{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    background:radial-gradient(circle,#ff0000 0%,#000000 80%);
+    border:2px solid #ff0000;
+    box-shadow:0 0 30px rgba(255,0,0,0.7);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    padding:10px;
+}
 
-        .logo-icon {
-            font-size: 14px;
-            color: #ff0000;
-            margin-top: 4px;
-        }
+.logo-text-top{
+    font-size:19px;
+    font-weight:900;
+    letter-spacing:1px;
+    line-height:1;
+}
 
-        /* 2. Header Text Styling */
-        h1 {
-            font-size: 29px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
+.logo-text-mid{
+    font-size:11px;
+    font-weight:800;
+    background:#ff0000;
+    padding:2px 6px;
+    margin:3px 0;
+}
 
-        .tags-capsule {
-            display: inline-block;
-            background-color: #18181b;
-            border: 1px solid #27272a;
-            padding: 5px 16px;
-            border-radius: 50px;
-            font-size: 13px;
-            color: #f4f4f5;
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
+.logo-text-bot{
+    font-size:9px;
+    font-weight:700;
+    color:#e2e8f0;
+}
 
-        .bio-text {
-            font-size: 14.5px;
-            color: #d4d4d8;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            max-width: 460px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.logo-icon{
+    margin-top:4px;
+    fill:#ff0000;
+}
 
-        .star-announcement {
-            font-size: 13.5px;
-            color: #f4f4f5;
-            font-weight: 500;
-            margin-bottom: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
+/* HEADER */
 
-        /* 3. Cards Main Layout */
-        .links-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 30px;
-        }
+h1{
+    font-size:29px;
+    font-weight:700;
+    margin-bottom:12px;
+}
 
-        .card {
-            display: flex;
-            align-items: center;
-            background-color: #09090b;
-            border-radius: 20px;
-            padding: 16px 20px;
-            text-decoration: none;
-            color: #ffffff;
-            position: relative;
-            transition: transform 0.15s, background-color 0.2s;
-        }
+.tags-capsule{
+    display:inline-block;
+    background:#18181b;
+    border:1px solid #27272a;
+    padding:5px 16px;
+    border-radius:50px;
+    font-size:13px;
+    color:#f4f4f5;
+    font-weight:500;
+    margin-bottom:24px;
+}
 
-        .card:hover {
-            transform: scale(1.01);
-            background-color: #121214;
-        }
+.bio-text{
+    font-size:14.5px;
+    color:#d4d4d8;
+    line-height:1.6;
+    margin-bottom:24px;
+    max-width:460px;
+    margin-left:auto;
+    margin-right:auto;
+}
 
-        /* Exact Inner Border Glow Effects */
-        .card-crypto { border: 1.5px solid #00cc83; box-shadow: inset 0 0 10px rgba(0, 204, 131, 0.1); }
-        .card-binance { border: 1.5px solid #e5b018; box-shadow: inset 0 0 10px rgba(229, 176, 24, 0.1); }
-        .card-local-pay { border: 1.5px solid #22c55e; box-shadow: inset 0 0 10px rgba(34, 197, 94, 0.1); }
-        .card-ads { border: 1.5px solid #6366f1; box-shadow: inset 0 0 10px rgba(99, 102, 241, 0.1); }
-        .card-download { border: 1.5px solid #ef4444; box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.1); }
-        .card-contact { border: 1.5px solid #2563eb; box-shadow: inset 0 0 10px rgba(37, 99, 235, 0.1); }
+.star-announcement{
+    font-size:13.5px;
+    color:#f4f4f5;
+    font-weight:500;
+    margin-bottom:28px;
+}
 
-        /* Left Filled Round Icon Backgrounds */
-        .icon-box {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #ffffff;
-            margin-right: 18px;
-            flex-shrink: 0;
-        }
+/* CARDS */
 
-        .bg-crypto { background-color: #00cc83; }
-        .bg-binance { background-color: #e5b018; }
-        .bg-local-pay { background-color: #22c55e; }
-        .bg-ads { background-color: #6366f1; }
-        .bg-download { background-color: #ef4444; }
-        .bg-contact { background-color: #2563eb; }
+.links-grid{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-bottom:30px;
+}
 
-        /* Card Content Text Alignment */
-        .card-details {
-            flex-grow: 1;
-            text-align: left;
-        }
+.card{
+    display:flex;
+    align-items:center;
+    background:#09090b;
+    border-radius:20px;
+    padding:16px 20px;
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+    transition:0.2s;
+}
 
-        .title-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.card:hover{
+    transform:scale(1.01);
+    background:#121214;
+}
 
-        .main-title {
-            font-size: 16px;
-            font-weight: 600;
-        }
+.card-crypto{
+    border:1.5px solid #00cc83;
+    box-shadow:inset 0 0 10px rgba(0,204,131,0.1);
+}
 
-        .sub-title {
-            font-size: 13px;
-            color: #71717a;
-            margin-top: 3px;
-        }
+.card-binance{
+    border:1.5px solid #f3ba2f;
+    box-shadow:inset 0 0 10px rgba(243,186,47,0.1);
+}
 
-        /* Small Green TOP Badge */
-        .badge-green {
-            background-color: rgba(16, 185, 129, 0.15);
-            color: #10b981;
-            font-size: 9px;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 4px;
-            letter-spacing: 0.5px;
-        }
+.card-payoneer{
+    border:1.5px solid #ff4800;
+    box-shadow:inset 0 0 10px rgba(255,72,0,0.1);
+}
 
-        /* Right Chevron Arrow */
-        .arrow-box {
-            color: #a1a1aa;
-            font-size: 13px;
-            padding-left: 10px;
-        }
+.card-ads{
+    border:1.5px solid #6366f1;
+    box-shadow:inset 0 0 10px rgba(99,102,241,0.1);
+}
 
-        /* 4. Footer Section (No Beacons) */
-        .footer-note {
-            font-size: 13.5px;
-            color: #a1a1aa;
-            margin-bottom: 20px;
-        }
+.card-mods{
+    border:1.5px solid #ff2d55;
+    box-shadow:inset 0 0 10px rgba(255,45,85,0.1);
+}
 
-        .bottom-socials {
-            display: flex;
-            justify-content: center;
-            gap: 18px;
-        }
+/* ICONS */
 
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: #18181b;
-            border: 1px solid #27272a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 16px;
-            text-decoration: none;
-            transition: background-color 0.2s;
-        }
+.icon-box{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:18px;
+    flex-shrink:0;
+}
 
-        .social-link:hover {
-            background-color: #27272a;
-        }
-    </style>
+.bg-crypto{
+    background:#00cc83;
+}
+
+.bg-binance{
+    background:#f3ba2f;
+}
+
+.bg-payoneer{
+    background:#fff;
+}
+
+.bg-ads{
+    background:#6366f1;
+}
+
+.bg-mods{
+    background:#ff2d55;
+}
+
+.svg-icon{
+    width:24px;
+    height:24px;
+}
+
+/* TEXT */
+
+.card-details{
+    flex-grow:1;
+    text-align:left;
+}
+
+.title-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.main-title{
+    font-size:16px;
+    font-weight:600;
+}
+
+.sub-title{
+    font-size:13px;
+    color:#71717a;
+    margin-top:3px;
+    word-break:break-word;
+}
+
+.badge-green{
+    background:rgba(16,185,129,0.15);
+    color:#10b981;
+    font-size:9px;
+    font-weight:700;
+    padding:2px 6px;
+    border-radius:4px;
+}
+
+.arrow-box{
+    padding-left:10px;
+}
+
+.chevron-icon{
+    width:14px;
+    height:14px;
+    fill:#a1a1aa;
+}
+
+/* FOOTER */
+
+.footer-note{
+    font-size:13.5px;
+    color:#a1a1aa;
+    margin-bottom:20px;
+}
+
+.bottom-socials{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.social-link{
+    width:40px;
+    height:40px;
+    background:#18181b;
+    border:1px solid #27272a;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:0.2s;
+}
+
+.social-link svg{
+    width:18px;
+    height:18px;
+    fill:#fff;
+}
+
+.social-youtube:hover{
+    background:#ff0000;
+}
+
+.social-telegram:hover{
+    background:#0088cc;
+}
+
+.social-whatsapp:hover{
+    background:#25d366;
+}
+
+.social-email:hover{
+    background:#ea4335;
+}
+
+.copy-success{
+    font-size:11px;
+    color:#00cc83;
+    display:none;
+    font-weight:bold;
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="main-container">
-        
-        <!-- Profile Custom CSS Logo Spot -->
-        <div class="profile-section">
-            <div class="logo-circle">
-                <span class="logo-text-top">GTA</span>
-                <span class="logo-text-mid">MODDING</span>
-                <span class="logo-text-bot">COMMUNITY</span>
-                <i class="fa-solid fa-gamepad logo-icon"></i>
-            </div>
-        </div>
-        
-        
-        <h1>GTA Modding Community</h1>
-        <div class="tags-capsule">Mods • Tools • Tutorials • Community</div>
-        
-        <div class="bio-text">
-            We create and share high quality GTA Mods & tools for free.<br>
-            Your support keeps this community alive! ❤️
-        </div>
-        
-        <div class="star-announcement">
-            <span style="color: #ef4444;">⭐</span> Most users support via Binance (Fast & Easy) <span style="color: #e5b018;">⚡</span>
-        </div>
+<div class="main-container">
 
-        <!-- Links List Grid Container -->
-        <div class="links-grid">
-            
-            <!-- Link 1: Crypto -->
-            <a href="#" class="card card-crypto">
-                <div class="icon-box bg-crypto">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </div>
-                <div class="card-details">
-                    <div class="title-row">
-                        <span class="main-title">Support via Crypto (TRC20)</span>
-                        <span class="badge-green">TOP</span>
-                    </div>
-                    <div class="sub-title">USDT TRC20 Accepted</div>
-                </div>
-                <div class="arrow-box"><i class="fa-solid fa-chevron-right"></i></div>
-            </a>
+<div class="profile-section">
+<div class="logo-circle">
 
-            <!-- Link 2: Binance -->
-            <a href="#" class="card card-binance">
-                <div class="icon-box bg-binance">
-                    <i class="fa-solid fa-cubes"></i>
-                </div>
-                <div class="card-details">
-                    <div class="title-row">
-                        <span class="main-title">Donate via Binance Pay <span style="color: #e5b018;">⚡</span></span>
-                    </div>
-                    <div class="sub-title">Instant • Secure • Low Fees</div>
-                </div>
-                <div class="arrow-box"><i class="fa-solid fa-chevron-right"></i></div>
-            </a>
+<span class="logo-text-top">GTA</span>
+<span class="logo-text-mid">MODDING</span>
+<span class="logo-text-bot">COMMUNITY</span>
 
-            <!-- Link 3: JazzCash -->
-            <a href="#" class="card card-local-pay">
-                <div class="icon-box bg-local-pay">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                </div>
-                <div class="card-details">
-                    <div class="title-row">
-                        <span class="main-title">JazzCash / Easypaisa Support 🇵🇰</span>
-                    </div>
-                    <div class="sub-title">Send payment & share screenshot on WhatsApp</div>
-                </div>
-                <div class="arrow-right arrow-box"><i class="fa-solid fa-chevron-right"></i></div>
-            </a>
+<svg class="logo-icon" width="16" height="16" viewBox="0 0 24 24">
+<path d="M17.5 4.5h-11c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2v-11c0-1.1-.9-2-2-2z"/>
+</svg>
 
-            <!-- Link 4: Watch Ads -->
-            <a href="#" class="card card-ads">
-                <div class="icon-box bg-ads">
-                    <i class="fa-solid fa-eye"></i>
-                </div>
-                <div class="card-content card-details">
-                    <div class="title-row">
-                        <span class="main-title">Free Support (Watch Ads) 🎆</span>
-                    </div>
-                    <div class="sub-title">Support for free by viewing ads</div>
-                </div>
-                <div class="arrow-box"><i class="fa-solid fa-chevron-right"></i></div>
-            </a>
+</div>
+</div>
 
-            <!-- Link 5: Download Mods -->
-            <a href="#" class="card card-download">
-                <div class="icon-box bg-download">
-                    <i class="fa-solid fa-download"></i>
-                </div>
-                <div class="card-details">
-                    <div class="title-row">
-                        <span class="main-title">Download My Mods 🔽</span>
-                    </div>
-                    <div class="sub-title">Direct links to all mods & tools</div>
-                </div>
-                <div class="arrow-box"><i class="fa-solid fa-chevron-right"></i></div>
-            </a>
+<h1>GTA Modding Community</h1>
 
-            <!-- Link 6: Contact Me -->
-            <a href="#" class="card card-contact">
-                <div class="icon-box bg-contact">
-                    <i class="fa-solid fa-comments"></i>
-                </div>
-                <div class="card-details">
-                    <div class="title-row">
-                        <span class="main-title">Contact Me 💬</span>
-                    </div>
-                    <div class="sub-title">Have questions? Let's talk!</div>
-                </div>
-                <div class="arrow-box"><i class="fa-solid fa-chevron-right"></i></div>
-            </a>
+<div class="tags-capsule">
+Mods • Tools • Tutorials • Community
+</div>
 
-        </div>
+<div class="bio-text">
+We create and share high quality GTA Mods & tools for free.<br>
+Your support keeps this community alive! ❤️
+</div>
 
-        <!-- Bottom Text Footer (No Beacons Brand) -->
-        <div class="footer-note">Thanks for being part of this community! 🙏</div>
-        
-        <!-- Social Medias -->
-        <div class="bottom-socials">
-            <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" class="social-link"><i class="fa-brands fa-telegram"></i></a>
-            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fa-solid fa-envelope"></i></a>
-        </div>
+<div class="star-announcement">
+⭐ Most users support via Binance (Fast & Easy) ⚡
+</div>
 
-    </div>
+<div class="links-grid">
+
+<!-- CRYPTO -->
+
+<div class="card card-crypto" onclick="copyCryptoAddress()">
+
+<div class="icon-box bg-crypto">
+
+<svg class="svg-icon" viewBox="0 0 24 24" fill="#fff">
+<path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9z"/>
+</svg>
+
+</div>
+
+<div class="card-details">
+
+<div class="title-row">
+<span class="main-title">Support via Crypto (TRC20)</span>
+<span class="badge-green">TOP</span>
+<span id="copy-toast" class="copy-success">COPIED!</span>
+</div>
+
+<div class="sub-title" id="crypto-addr">
+TDLShVWmJzgyR26KiYD2ZaCWnuh7hCoHdV
+</div>
+
+</div>
+
+<div class="arrow-box">
+<svg class="chevron-icon" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
+</div>
+
+</div>
+
+<!-- BINANCE -->
+
+<a href="https://binance.com" target="_blank" class="card card-binance">
+
+<div class="icon-box bg-binance">
+
+<svg class="svg-icon" viewBox="0 0 24 24" fill="#000">
+<path d="M7.3 12l4.7-4.7 4.7 4.7-4.7 4.7L7.3 12zm0-4.7L12 2.6l4.7 4.7-2 2-2.7-2.7-2.7 2.7-2-2zm9.4 4.7l2-2 4.7 4.7-4.7 4.7-2-2 2.7-2.7-2.7-2.7z"/>
+</svg>
+
+</div>
+
+<div class="card-details">
+<div class="title-row">
+<span class="main-title">Donate via Binance Pay ⚡</span>
+</div>
+<div class="sub-title">
+Instant • Secure • Low Fees
+</div>
+</div>
+
+<div class="arrow-box">
+<svg class="chevron-icon" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
+</div>
+
+</a>
+
+<!-- PAYONEER -->
+
+<a href="https://payoneer.com" target="_blank" class="card card-payoneer">
+
+<div class="icon-box bg-payoneer">
+
+<svg class="svg-icon" viewBox="0 0 64 64">
+<defs>
+<linearGradient id="payoneerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#ff4800"/>
+<stop offset="100%" stop-color="#ff9a00"/>
+</linearGradient>
+</defs>
+
+<path fill="url(#payoneerGradient)"
+d="M32 6c-14.3 0-26 11.7-26 26s11.7 26 26 26 26-11.7 26-26S46.3 6 32 6zm0 42c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z"/>
+</svg>
+
+</div>
+
+<div class="card-details">
+<div class="title-row">
+<span class="main-title">Support via Payoneer</span>
+</div>
+
+<div class="sub-title">
+Fast & Secure International Payment
+</div>
+</div>
+
+<div class="arrow-box">
+<svg class="chevron-icon" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
+</div>
+
+</a>
+
+<!-- ADS -->
+
+<a href="https://sfl.gl" target="_blank" class="card card-ads">
+
+<div class="icon-box bg-ads">
+
+<svg class="svg-icon" viewBox="0 0 24 24" fill="#fff">
+<path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2z"/>
+</svg>
+
+</div>
+
+<div class="card-details">
+<div class="title-row">
+<span class="main-title">Free Support (Watch Ads) 🎆</span>
+</div>
+
+<div class="sub-title">
+Support for free by viewing ads
+</div>
+</div>
+
+<div class="arrow-box">
+<svg class="chevron-icon" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
+</div>
+
+</a>
+
+<!-- MODS PAGE 1 -->
+
+<a href="https://modsfire.com/page1" target="_blank" class="card card-mods">
+
+<div class="icon-box bg-mods">
+
+<svg class="svg-icon" viewBox="0 0 24 24" fill="#fff">
+<path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/>
+</svg>
+
+</div>
+
+<div class="card-details">
+
+<div class="title-row">
+<span class="main-title">Download All Mods 📥</span>
+</div>
+
+<div class="sub-title">
+ModsFire Page 1 Collection
+</div>
+
+</div>
+
+<div class="arrow-box">
+<svg class="chevron-icon" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
+</div>
+
+</a>
+
+<!-- MODS PAGE 2 -->
+
+<a href="https://modsfire.com/page2" target="_blank" class="card card-mods">
+
+<div class="icon-box bg-mods">
+
+<svg class="svg-icon" viewBox="0 0 24 24" fill="#fff">
+<path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/>
+</svg>
+
+</div>
+
+<div class="card-details">
+
+<div class="title-row">
+<span class="main-title">More Mods Collection 🔥</span>
+</div>
+
+<div class="sub-title">
+Extra GTA Mods & Tools Archive
+</div>
+
+</div>
+
+<div class="arrow-box">
+<svg class="chevron-icon" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
+</div>
+
+</a>
+
+</div>
+
+<div class="footer-note">
+Thanks for being part of this community! 🙏
+</div>
+
+<div class="bottom-socials">
+
+<a href="https://youtube.com" target="_blank" class="social-link social-youtube">
+<svg viewBox="0 0 24 24">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
+</svg>
+</a>
+
+<a href="https://t.me" target="_blank" class="social-link social-telegram">
+<svg viewBox="0 0 24 24">
+<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z"/>
+</svg>
+</a>
+
+<a href="https://wa.me/923102656635" target="_blank" class="social-link social-whatsapp">
+<svg viewBox="0 0 24 24">
+<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12"/>
+</svg>
+</a>
+
+<a href="mailto:aamirh258@gmail.com" class="social-link social-email">
+<svg viewBox="0 0 24 24">
+<path d="M20 4H4c-1.1 0-1.99.9-1.99 2"/>
+</svg>
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function copyCryptoAddress(){
+
+var addressText=document.getElementById("crypto-addr").innerText;
+
+navigator.clipboard.writeText(addressText).then(function(){
+
+var toast=document.getElementById("copy-toast");
+
+toast.style.display="inline";
+
+setTimeout(function(){
+toast.style.display="none";
+},1500);
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
