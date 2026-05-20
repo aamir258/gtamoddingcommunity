@@ -3,11 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>GTA Modding Community</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,37 +11,22 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 }
 
 body{
-background:
-radial-gradient(circle at top,#2a0000 0%,#000000 35%),
-#000;
+background:#000;
 color:#fff;
-min-height:100vh;
 display:flex;
 justify-content:center;
-padding:30px 16px;
-overflow-x:hidden;
+padding:30px 15px;
+min-height:100vh;
 }
 
 .main-container{
 width:100%;
-max-width:560px;
+max-width:540px;
 text-align:center;
-animation:fadeIn 1s ease;
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 
 /* LOGO */
@@ -53,102 +34,68 @@ transform:translateY(0);
 .profile-section{
 display:flex;
 justify-content:center;
-margin-bottom:24px;
+margin-bottom:25px;
 }
 
 .logo-circle{
-width:140px;
-height:140px;
+width:130px;
+height:130px;
 border-radius:50%;
-background:
-radial-gradient(circle,#ff2d2d 0%,#0d0d0d 75%);
-border:3px solid #ff3b3b;
-box-shadow:
-0 0 20px rgba(255,0,0,0.7),
-0 0 60px rgba(255,0,0,0.25);
+background:radial-gradient(circle,#ff0000 0%,#000000 80%);
+border:2px solid #ff0000;
+box-shadow:0 0 40px rgba(255,0,0,.7);
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-position:relative;
-overflow:hidden;
-}
-
-.logo-circle::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:linear-gradient(45deg,transparent,rgba(255,255,255,0.1),transparent);
-animation:shine 5s linear infinite;
-}
-
-@keyframes shine{
-0%{
-transform:rotate(0deg) translateX(-50%);
-}
-100%{
-transform:rotate(360deg) translateX(-50%);
-}
 }
 
 .logo-text-top{
-font-size:22px;
-font-weight:800;
-z-index:2;
+font-size:23px;
+font-weight:900;
 }
 
 .logo-text-mid{
-font-size:12px;
-font-weight:700;
+font-size:11px;
+font-weight:800;
 background:#ff0000;
-padding:3px 8px;
-border-radius:30px;
-margin:5px 0;
-z-index:2;
+padding:2px 8px;
+margin:4px 0;
 }
 
 .logo-text-bot{
 font-size:10px;
+font-weight:700;
 color:#ddd;
-z-index:2;
 }
 
-/* TEXT */
+/* HEADER */
 
 h1{
-font-size:34px;
-font-weight:700;
+font-size:30px;
 margin-bottom:12px;
-text-shadow:0 0 15px rgba(255,0,0,0.4);
 }
 
 .tags{
 display:inline-block;
-padding:8px 18px;
+padding:7px 18px;
 border-radius:50px;
 background:#121212;
-border:1px solid #242424;
+border:1px solid #27272a;
 font-size:13px;
-margin-bottom:22px;
+margin-bottom:25px;
 }
 
 .bio{
 font-size:15px;
-color:#d4d4d4;
-line-height:1.8;
+line-height:1.7;
+color:#d4d4d8;
 margin-bottom:24px;
-padding:0 10px;
 }
 
 .notice{
-background:linear-gradient(90deg,#1a1a1a,#0d0d0d);
-border:1px solid #2c2c2c;
-padding:14px;
-border-radius:18px;
 font-size:14px;
 margin-bottom:28px;
-box-shadow:0 0 15px rgba(255,255,255,0.03);
 }
 
 /* CARDS */
@@ -156,76 +103,58 @@ box-shadow:0 0 15px rgba(255,255,255,0.03);
 .links-grid{
 display:flex;
 flex-direction:column;
-gap:18px;
+gap:16px;
 }
 
 .card{
 display:flex;
 align-items:center;
+background:#09090b;
+border-radius:22px;
 padding:18px;
-border-radius:24px;
 text-decoration:none;
 color:#fff;
-backdrop-filter:blur(10px);
-background:rgba(15,15,15,0.9);
-transition:0.3s ease;
-position:relative;
-overflow:hidden;
-}
-
-.card::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);
-transition:0.6s;
-}
-
-.card:hover::before{
-left:100%;
+transition:.2s;
 }
 
 .card:hover{
-transform:translateY(-5px) scale(1.01);
+transform:scale(1.02);
+background:#121214;
+}
+
+.card-crypto{
+border:1.5px solid #00cc83;
+box-shadow:0 0 12px rgba(0,204,131,.15);
 }
 
 .card-binance{
 border:1.5px solid #f3ba2f;
-box-shadow:0 0 20px rgba(243,186,47,0.12);
+box-shadow:0 0 12px rgba(243,186,47,.15);
 }
 
 .card-payoneer{
-border:1.5px solid #ff5a1f;
-box-shadow:0 0 20px rgba(255,90,31,0.12);
-}
-
-.card-crypto{
-border:1.5px solid #00d084;
-box-shadow:0 0 20px rgba(0,208,132,0.12);
+border:1.5px solid #ff4800;
+box-shadow:0 0 12px rgba(255,72,0,.15);
 }
 
 .card-ads{
-border:1.5px solid #6c63ff;
-box-shadow:0 0 20px rgba(108,99,255,0.12);
-}
-
-.card-mods{
-border:1.5px solid #ff2d55;
-box-shadow:0 0 20px rgba(255,45,85,0.12);
+border:1.5px solid #6366f1;
+box-shadow:0 0 12px rgba(99,102,241,.15);
 }
 
 .icon-box{
-width:58px;
-height:58px;
-border-radius:18px;
+width:50px;
+height:50px;
+border-radius:50%;
 display:flex;
-justify-content:center;
 align-items:center;
-margin-right:16px;
+justify-content:center;
+margin-right:18px;
 flex-shrink:0;
+}
+
+.bg-crypto{
+background:#00cc83;
 }
 
 .bg-binance{
@@ -236,48 +165,60 @@ background:#f3ba2f;
 background:#fff;
 }
 
-.bg-crypto{
-background:#00d084;
-}
-
 .bg-ads{
-background:#6c63ff;
+background:#6366f1;
 }
 
-.bg-mods{
-background:#ff2d55;
-}
-
-.svg-icon{
-width:30px;
-height:30px;
+.icon-box img{
+width:24px;
+height:24px;
 }
 
 .card-details{
-text-align:left;
 flex-grow:1;
+text-align:left;
 }
 
 .main-title{
-font-size:17px;
+font-size:16px;
 font-weight:600;
-margin-bottom:4px;
 }
 
 .sub-title{
 font-size:13px;
 color:#9ca3af;
+margin-top:4px;
+word-break:break-all;
+}
+
+.badge{
+background:rgba(16,185,129,.15);
+color:#10b981;
+font-size:9px;
+font-weight:700;
+padding:2px 6px;
+border-radius:4px;
+margin-left:8px;
 }
 
 .arrow{
-font-size:28px;
-color:#777;
+width:15px;
+height:15px;
+fill:#a1a1aa;
+}
+
+.copy-success{
+display:none;
+font-size:11px;
+font-weight:bold;
+color:#00cc83;
+margin-left:10px;
 }
 
 /* FOOTER */
 
 .footer{
-margin-top:35px;
+margin-top:30px;
 font-size:14px;
 color:#a1a1aa;
 }
@@ -286,68 +227,45 @@ color:#a1a1aa;
 display:flex;
 justify-content:center;
 gap:18px;
-margin-top:24px;
+margin-top:20px;
 }
 
-.social{
-width:48px;
-height:48px;
+.social-link{
+width:42px;
+height:42px;
 border-radius:50%;
-background:#121212;
-border:1px solid #242424;
+background:#18181b;
+border:1px solid #27272a;
 display:flex;
-align-items:center;
 justify-content:center;
-transition:0.3s;
+align-items:center;
+transition:.2s;
 }
 
-.social:hover{
-transform:translateY(-5px);
-}
-
-.social svg{
+.social-link img{
 width:20px;
 height:20px;
-fill:#fff;
+filter:invert(1);
 }
 
-.youtube:hover{
+.social-youtube:hover{
 background:#ff0000;
+border-color:#ff0000;
 }
 
-.telegram:hover{
+.social-telegram:hover{
 background:#0088cc;
+border-color:#0088cc;
 }
 
-.whatsapp:hover{
+.social-whatsapp:hover{
 background:#25d366;
+border-color:#25d366;
 }
 
-.email:hover{
+.social-email:hover{
 background:#ea4335;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-h1{
-font-size:28px;
-}
-
-.main-title{
-font-size:15px;
-}
-
-.sub-title{
-font-size:12px;
-}
-
-.logo-circle{
-width:120px;
-height:120px;
-}
-
+border-color:#ea4335;
 }
 
 </style>
@@ -364,7 +282,9 @@ height:120px;
 <div class="logo-circle">
 
 <div class="logo-text-top">GTA</div>
+
 <div class="logo-text-mid">MODDING</div>
+
 <div class="logo-text-bot">COMMUNITY</div>
 
 </div>
@@ -376,16 +296,16 @@ height:120px;
 <h1>GTA Modding Community</h1>
 
 <div class="tags">
-Mods • Graphics • Tools • Tutorials • Community
+Mods • Tools • Tutorials • Community
 </div>
 
 <div class="bio">
-High quality GTA Android mods, graphics packs, shaders & tools.<br>
-Your support helps us keep creating amazing content ❤️
+We create and share high quality GTA Mods & tools for free.<br>
+Your support keeps this community alive ❤️
 </div>
 
 <div class="notice">
-⭐ Most users support through Binance because it is fast, secure & low fee ⚡
+⭐ Most users support via Binance (Fast & Easy) ⚡
 </div>
 
 <!-- CARDS -->
@@ -398,9 +318,8 @@ Your support helps us keep creating amazing content ❤️
 
 <div class="icon-box bg-crypto">
 
-<svg class="svg-icon" viewBox="0 0 24 24" fill="#fff">
-<path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9z"/>
-</svg>
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tether.svg"
+style="filter:invert(1);">
 
 </div>
 
@@ -408,27 +327,30 @@ Your support helps us keep creating amazing content ❤️
 
 <div class="main-title">
 Support via Crypto (TRC20)
+<span class="badge">TOP</span>
+<span id="copy-toast" class="copy-success">COPIED!</span>
 </div>
 
 <div class="sub-title" id="crypto-addr">
-Tap to copy wallet address
+TDLShVWmJzgyR26KiYD2ZaCWnuh7hCoHdV
 </div>
 
 </div>
 
-<div class="arrow">›</div>
+<svg class="arrow" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
 
 </div>
 
 <!-- BINANCE -->
 
-<a href="https://binance.com" target="_blank" class="card card-binance">
+<a href="https://s.binance.com/emgxQYEd" target="_blank" class="card card-binance">
 
 <div class="icon-box bg-binance">
 
-<svg class="svg-icon" viewBox="0 0 126.61 126.61">
-<path fill="#000000" d="M38.16 52.38L63.3 27.24l25.15 25.14 14.63-14.63L63.3 0 23.53 37.75zm-14.63 14.63L8.9 81.64l14.63 14.63 14.63-14.63zm52.38 0L63.3 54.39 50.68 67.01 63.3 79.63l12.61-12.62zm52.37 0L113.65 52.38 99.02 67.01l14.63 14.63zM88.45 81.64L63.3 106.78 38.16 81.64 23.53 96.27l39.77 39.77 39.78-39.77z"/>
-</svg>
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/binance.svg"
+style="filter:brightness(0);">
 
 </div>
 
@@ -439,32 +361,26 @@ Donate via Binance Pay ⚡
 </div>
 
 <div class="sub-title">
-Instant • Secure • Global Payments
+Instant • Secure • Low Fees
 </div>
 
 </div>
 
-<div class="arrow">›</div>
+<svg class="arrow" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
 
 </a>
 
 <!-- PAYONEER -->
 
-<a href="https://payoneer.com" target="_blank" class="card card-payoneer">
+<a href="https://link.payoneer.com/Token?t=5F42337B3E8F40C39BD4F02E08EB1BDB&src=mobile"
+target="_blank"
+class="card card-payoneer">
 
 <div class="icon-box bg-payoneer">
 
-<svg class="svg-icon" viewBox="0 0 512 512">
-<defs>
-<linearGradient id="payoneerReal" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#ff4800"/>
-<stop offset="100%" stop-color="#ff9a00"/>
-</linearGradient>
-</defs>
-
-<path fill="url(#payoneerReal)"
-d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm0 352c-70.7 0-128-57.3-128-128s57.3-128 128-128 128 57.3 128 128-57.3 128-128 128z"/>
-</svg>
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/payoneer.svg">
 
 </div>
 
@@ -475,24 +391,25 @@ Support via Payoneer
 </div>
 
 <div class="sub-title">
-Fast International Creator Payments
+Fast & Secure International Payment
 </div>
 
 </div>
 
-<div class="arrow">›</div>
+<svg class="arrow" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+</svg>
 
 </a>
 
-<!-- ADS -->
+<!-- FREE SUPPORT -->
 
-<a href="https://sfl.gl" target="_blank" class="card card-ads">
+<a href="https://sfl.gl/ygPldz4" target="_blank" class="card card-ads">
 
 <div class="icon-box bg-ads">
 
-<svg class="svg-icon" viewBox="0 0 24 24" fill="#fff">
-<path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2z"/>
-</svg>
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"
+style="filter:invert(1);">
 
 </div>
 
@@ -503,70 +420,14 @@ Free Support (Watch Ads) 🎆
 </div>
 
 <div class="sub-title">
-Support the community for free
+Support for free by viewing ads
 </div>
 
 </div>
 
-<div class="arrow">›</div>
-
-</a>
-
-<!-- MODS PAGE 1 -->
-
-<a href="https://modsfire.com/page1" target="_blank" class="card card-mods">
-
-<div class="icon-box bg-mods">
-
-<svg class="svg-icon" viewBox="0 0 512 512">
-<path fill="#fff"
-d="M256 32L64 224h112l-32 256 304-368H320l32-80z"/>
+<svg class="arrow" viewBox="0 0 24 24">
+<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
 </svg>
-
-</div>
-
-<div class="card-details">
-
-<div class="main-title">
-Download All Mods 📥
-</div>
-
-<div class="sub-title">
-ModsFire Main Collection
-</div>
-
-</div>
-
-<div class="arrow">›</div>
-
-</a>
-
-<!-- MODS PAGE 2 -->
-
-<a href="https://modsfire.com/page2" target="_blank" class="card card-mods">
-
-<div class="icon-box bg-mods">
-
-<svg class="svg-icon" viewBox="0 0 512 512">
-<path fill="#fff"
-d="M256 32L64 224h112l-32 256 304-368H320l32-80z"/>
-</svg>
-
-</div>
-
-<div class="card-details">
-
-<div class="main-title">
-More Mods & Tools 🔥
-</div>
-
-<div class="sub-title">
-Extra Graphics & Mod Archives
-</div>
-
-</div>
-
-<div class="arrow">›</div>
 
 </a>
 
@@ -575,53 +436,77 @@ Extra Graphics & Mod Archives
 <!-- FOOTER -->
 
 <div class="footer">
-Thanks for supporting GTA Modding Community 🙏
+Thanks for being part of this community 🙏
 </div>
+
+<!-- SOCIALS -->
 
 <div class="socials">
 
-<a href="https://youtube.com" target="_blank" class="social youtube">
-<svg viewBox="0 0 24 24">
-<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/>
-</svg>
+<!-- YOUTUBE -->
+
+<a href="https://youtube.com/@gtamoddingcommuniity?si=6gCmn2HaJsiymXBR"
+target="_blank"
+class="social-link social-youtube">
+
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg">
+
 </a>
 
-<a href="https://t.me" target="_blank" class="social telegram">
-<svg viewBox="0 0 24 24">
-<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0z"/>
-</svg>
+<!-- TELEGRAM -->
+
+<a href="https://t.me/GtaModdingCommunnity"
+target="_blank"
+class="social-link social-telegram">
+
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg">
+
 </a>
 
-<a href="https://wa.me/923102656635" target="_blank" class="social whatsapp">
-<svg viewBox="0 0 24 24">
-<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12"/>
-</svg>
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/923102656635"
+target="_blank"
+class="social-link social-whatsapp">
+
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg">
+
 </a>
 
-<a href="mailto:aamirh258@gmail.com" class="social email">
-<svg viewBox="0 0 24 24">
-<path d="M20 4H4c-1.1 0-2 .9-2 2"/>
-</svg>
+<!-- EMAIL -->
+
+<a href="mailto:aamirh258@gmail.com"
+class="social-link social-email">
+
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg">
+
 </a>
 
 </div>
 
 </div>
+
+<!-- SCRIPT -->
 
 <script>
 
 function copyCryptoAddress(){
 
-navigator.clipboard.writeText("TDLShVWmJzgyR26KiYD2ZaCWnuh7hCoHdV");
+var address=document.getElementById("crypto-addr").innerText;
 
-document.getElementById("crypto-addr").innerText="Wallet Address Copied ✅";
+navigator.clipboard.writeText(address).then(function(){
+
+var toast=document.getElementById("copy-toast");
+
+toast.style.display="inline";
 
 setTimeout(function(){
 
-document.getElementById("crypto-addr").innerText=
-"Tap to copy wallet address";
+toast.style.display="none";
 
-},2000);
+},1500);
+
+});
 
 }
 
